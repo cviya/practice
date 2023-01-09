@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            JS中为我们提供了三种逻辑运算符
+            && 与 可以对符号两侧的值进行与运算并返回结果 有一假即假 短路：如果第一个值为假就不会执行后面的了
+            || 或 可以对符号两侧的值进行或运算并返回结果 有一真即真 短路：如果第一个值为真就不会执行后面的了
+            ! 非 取反操作 true变false false变true 可以利用该特点其他的数据类型转为布尔值
+        */
+       var a=true;
+       a=!a;
+       console.log("a="+a);
+
+       /*
+            && || 非布尔值
+                对于非布尔值进行与或运算时，会将其转换为布尔值再运算
+       */
+
+        // 与运算：如果两个值都为true，则返回后边的值
+        // 如果有一个false，则返回false值（短路）
+      var result=1&&0;
+      console.log("result="+result) ;
+        // 或运算：如果两个值都为false，则返回后边的值
+        // 如果有一个true，则返回true值（短路）
+      var result2=1||NaN;
+      console.log("result2="+result2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

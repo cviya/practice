@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            在JS中所有的数值都是Number类型
+                包括整数和浮点数（小数）
+            Infinity表示正无穷，也是Number类型
+            NaN也是一个特殊的数字，表示Not A Number，但也是Number类型
+        */
+
+        // 数字123
+        var a=123;
+        console.log(a);
+        // 字符串123
+        var b="123";
+        console.log(b);
+        // 可以使用一个运算符typeof来检查一个变量的类型
+        // 语法 typeof 变量
+        console.log(typeof a);
+        console.log(typeof b);
+        // JS中可以表示的数字的最大值,如果超过了最大值，则返回Infinity
+        console.log(Number.MAX_VALUE);
+
+        // 在JS中整数的运算基本可以保证精确,浮点数可能不是很精确
+        var b=123+456;
+        console.log(b);
+        var c=0.1+0.51;
+        console.log(c);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

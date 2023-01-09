@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        Ajax特点
+            优点：可以无需刷新页面而与服务器端进行通信
+                    允许你根据用户事件来更新部分页面内容
+            缺点：没有浏览历史，不能回退
+                    存在跨域问题
+                    sec不友好
+     -->
+     <!-- 
+        HTTP协议【超文本传输协议】
+            协议详细规定了浏览器和万维网服务器之间互相通信的规则
+
+        请求报文
+            行格式  
+                1.请求类型GET/POST 
+                2.URL  
+                3.HTTP版本/1.1
+            头格式
+                1.Host:atguigu.com
+                2.Cookie:name=guigu   
+                3.Content-type:application/x-www.form-urlencoded
+                4.User-Agent:chrome 83    
+            空行
+
+            体
+                1.username=admin&password=admin
+
+
+        响应报文
+            行  HTTP:1.1 200 OK
+            头  
+                1.Content-type:text/html;charset=utf-8
+                2.Content-length:2048
+                3.Content-encoding:gzip
+            空行
+            体
+                <html>
+                        <head>
+                        </head>
+                        <body>
+                            <h1>尚硅谷</h1>
+                        </body>
+                </html>
+      -->
+</body>
+</html>

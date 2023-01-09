@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迭代器</title>
+</head>
+<body>
+    <script>
+        const xiyou=["唐僧","孙悟空"];
+        // 使用for...of遍历数组,of保存的是键值
+        for(let v of xiyou){
+            console.log(v);
+        }
+        // 使用for...in遍历数组，in保存的是键名
+        for(let v in xiyou){
+            console.log(v);
+        }
+        for(let i=0;i<xiyou.length;i++){
+            console.log(xiyou[i]);
+        }
+        let iterator=xiyou[Symbol.iterator]();
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+    </script>
+</body>
+</html>

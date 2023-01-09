@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            /* 
+                内容区（content），元素中的所有的子元素和文本内容都在内容区中排列
+                    内容区的大小由width和height两个属性来设置
+                        width设置内容区的宽度
+                        height设置内容区的高度
+            */
+            width: 300px;
+            height: 300px;
+            background-color: yellowgreen;
+            /* 
+                边框（border），边框属于盒子边缘，边框里边属于盒子内部，出了边框都是盒子的外部
+                要设置边框，需要至少设置三个样式
+                边框的大小会影响到整个盒子的大小
+                    边框的宽度  border-width
+                    边框的颜色  border-color
+                    边框的样式  border-style
+            */
+            border-width: 3px;/*可以不写，默认值是3px*/
+            border-color: violet;/*可以不写，默认值是黑色*/
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        盒模型
+        每一个盒子都由以下几个部分组成：
+            内容区（content）
+            边框（border）
+            内边距（padding）
+            外边距（margin）
+     -->
+     <div class="box1"></div>
+</body>
+</html>

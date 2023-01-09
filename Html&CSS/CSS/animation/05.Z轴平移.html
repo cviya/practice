@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            /* 设置当前网页的视距为800px，人眼距离网页的距离 */
+            perspective: 800px;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            transition: all 2s;
+            margin: 100px auto;
+        }
+        .box1:hover{
+            /* Z轴平移属于立体效果，默认情况下网页不支持透视，如果需要看见效果必须设置网页的视距 */
+            transform: translateZ(200px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

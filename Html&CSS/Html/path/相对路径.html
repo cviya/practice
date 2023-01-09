@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        相对路径都会使用.或..开头
+        ./
+        ../
+        其中./可以忽略不写
+
+        ./表示当前文件所在的目录，也就是当前页面“相对路径”的所在目录，path
+        ../表示当前文件的上一级目录，也就是day1
+     -->
+    <a href="列表.html">超链接1</a> <!--会找不到，因为列表.html不在path目录下-->
+    <a href="../列表.html">超链接2</a> 
+    <a href="./inner/相对路径2.html">超链接3</a>
+    <a href="../path2/相对路径3.html" target="_blank">超链接4</a>
+    <!-- 
+        target属性，用来指定超链接打开的位置
+            可选值：
+                _self 默认值，在当前页面中打开超链接
+                _blank 在一个新的页面打开超链接
+     -->
+    
+</body>
+</html>

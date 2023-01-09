@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link rel="stylesheet" href="../font&background/fontawesome/css/all.css">
+    <style>
+        .box1 img{
+            width: 1376px;
+            height: 160px;
+            vertical-align: bottom;
+        }
+        li{
+            list-style: none;
+            float: left;
+            margin: 0 5px;
+        }
+        /* .ul-left li::before{
+            content: '\f2bb';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+        } */
+        .box2{
+            background-color: rgba(128, 128, 128, 0.61);
+            height: 30px;
+            line-height: 30px;
+            text-align:left;
+        }
+        .ul-left{
+            position: absolute;
+            top: 167px;
+            
+        }
+        .ul-right{
+            position: absolute;
+            top: 159px;
+            right: 90px;
+        }
+        a,a:link{
+            text-decoration: none;
+            color: #000;
+        }
+        a:hover{
+            color: rgba(255, 0, 0, 0.596);
+        }
+        .angle::after{
+            content: '\f107';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+        }
+        #shu::before{
+            content: "|";
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"><img src="./练习的截图/06京东顶部导航条/微信图片_20220905232929.png" alt=""></div>
+    <div class="box2">
+        <ul class="ul-left">
+            <li class="fas fa-broadcast-tower"> <a href="#">广东</a></li>
+        </ul>
+        <ul class="ul-right">
+            <li> <a href="#">你好，请登录 </a></li>
+            <li> <a href="#">免费注册 </a></li>
+            <li id="shu"> <a href="#">我的订单</a></li>
+            <li class="angle" id="shu"> <a href="#">我的京东</a></li>
+            <li class="angle" id="shu"> <a href="#">企业采购</a></li>
+            <li class="angle" id="shu"> <a href="#">商家服务</a></li>
+            <li class="angle" id="shu"> <a href="#">网站导航</a></li>
+            <li id="shu"> <a href="#">手机京东</a></li>
+            <li id="shu"> <a href="#">网站无障碍</a></li>
+        </ul>
+    </div>
+</body>
+</html>

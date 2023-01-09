@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            打印1-100之间所有奇数之和
+        */
+       var sum=0;
+       for(var i=1;i<=100;i++){
+        if(i%2!=0){
+            // console.log(i);
+            sum=sum+i;
+        }
+       }
+       console.log("sum="+sum);
+
+       /*
+            打印1-100之间所有7的倍数的个数及总和
+        */
+       var sum2=0;count=0;
+       for(var i=1;i<100;i++){
+        if(i%7==0){
+            sum2=sum2+i;
+            count++;
+        }
+       }
+       console.log("sum2="+sum2);
+       console.log("count="+count);
+
+       /*
+        水仙花数是指一个3位数，它的每个位上的数字的3次幂之和等于它本身
+        例如：1的3次方+5的3次方+3的3次方=153  ，请打印所有的水仙花数
+        */
+       for(var j=100;j<1001;j++){
+        // 获取百位数
+        var bai=parseInt(j/100);
+        // 获取十位数
+        var shi=parseInt((j/10)%10);
+        // 获取个位数
+        var ge=j%10;
+        if(bai*bai*bai+shi*shi*shi+ge*ge*ge==j){
+            console.log("水仙花数为："+j);
+        }
+       }
+
+       /*
+            在页面中接受一个用户输入的数字，并判断该数是否质数
+            质数：只能被1和它自身整除的数，1不是质数也不是合数，质数必须是大于1的自然数
+        */
+       var num=+prompt("请输入一个大于1的整数");
+        // 默认num是质数
+        var flag=true;
+       if(num<=1){
+        alert("该值不合法!");
+       }else{
+        for(var i=2;i<num;i++){
+            if(num%i==0){
+                flag=false;
+            }
+        }
+        if(flag){
+        alert(num+"是质数");
+       }else{
+        alert(num+"不是质数");
+       }
+       }
+      
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

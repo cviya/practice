@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            垃圾回收(GC)
+            当一个对象没有任何的变量或属性对它进行引用，此时我们将永远无法操作该对象
+             此时这种对象就是一个垃圾，会占用大量内存空间，导致运行变慢
+            在JS中拥有自动的垃圾回收机制，会自动将内这垃圾对象从内存中销毁
+                我们不需要也不能进行垃圾回收的操作
+            我们需要做的只是将不再使用的对象设置null即可
+        */ 
+       var obj=new Object();
+       var obj2={
+        name:"孙悟空"
+       };
+        // 不再使用obj
+       obj=null;
+       function Person(name){
+        this.name=name;
+       }
+       var per=new Person("孙悟空");
+       console.log(per);
+    //    不再使用per
+       per=null;
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系统登录</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="header">
+        <div id="logo">
+            <img src="./images/logo.gif" border="0"/><br/>
+            <span>2015年春学期&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </div>
+        <div id="banner">好好学习,天天向上</div>
+        <img src="./images/head.gif" align="middle" id="computer"/>
+    </div>
+
+    <div id="page">
+        <br/><br/><br/><br/>
+        <div id="login">
+            <div id="title">
+                <h1><img src="./images/quanx32.gif" width="32" height="32" align="middle"/>
+                    &nbsp;系统登录
+                </h1>
+            </div>
+            <form name="form1" method="post" action="userLogin" id="form1">
+                <div id="content">
+                    <ul>
+                        <li>
+                            用户id :
+                            <input name="sUserId" type="text" class="inputtext" id="username" size="20" value="admin"required="required"/>
+                        </li>
+                        <li>
+                            密&nbsp;码 :
+                            <input name="sPasswd" type="password" class="inputtext" id="passwd" size="20" value="123456"required="required"/>
+                        </li>
+                        <li>
+                            <input name="submit" type="submit" id="submit" value="提 交" />
+                        </li>
+                        <br/><br/>
+                        <span style="color: #FF0000">系统提示</span>
+                        <br/><br/>
+                    </ul>
+                </div>
+            </form>
+            <div id="btm">
+                <div id="l">
+                    <div id="r"></div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+
+    <br/><br/><br/><br/>
+
+    <div id="footer">
+        <p>&copy;班级：姓名：学号：制作<a href="#">学校网站</a></p>
+    </div>
+
+    </body>
+</html>

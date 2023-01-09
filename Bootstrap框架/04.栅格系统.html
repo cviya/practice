@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="/Bootstrap/demo/css/bootstrap.min.css">
+    <style>
+        .container{
+            background-color: pink;
+        }
+        /* 选择以col开头的class */
+        div[class^=col]{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 在栅格系统里面默认会把一行分成12列 -->
+        <div class="row">
+            <div class="col-lg-10 col-md-3">col-lg-10</div>
+            <div class="col-lg-2 col-md-9">col-lg-2</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">col-lg-4</div>
+            <div class="col-lg-8">col-lg-8</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-7">col-lg-7</div>
+            <div class="col-lg-5">col-lg-5</div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">col-lg-3</div>
+            <div class="col-lg-2">col-lg-2</div>
+            <div class="col-lg-5">col-lg-5</div>
+            <div class="col-lg-2">col-lg-2</div>
+        </div>
+    </div>
+    
+</body>
+<script src="/Bootstrap/demo/js/jquery-3.6.1.min.js"></script>
+<script src="/Bootstrap/demo/js/bootstrap.js"></script>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "main": "Promise读取多个文件.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

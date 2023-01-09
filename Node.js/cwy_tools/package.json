@@ -1,0 +1,8 @@
+{
+    "name": "cwy_tools",
+    "version": "1.0.1",
+    "main": "index.js",
+    "description": "仅用于测试",
+    "keywords": ["cwy"],
+    "license": "ISC"
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            检查一个字符串中是否含有.
+            .表示任意字符  用转义字符\.可以将.就表示为.
+            \. 表示.
+            \\ 表示\
+            \w 表示任意字母、数字和下划线,相当于[A-z0-9_]
+            \W 除了字母、数字和下划线,相当于[^A-z0-9_]
+            \d 任意数字
+            \D 除了数字
+            \s 空格
+            \S 除了空格
+            \b 单词边界
+            \B 除了单词边界
+        */ 
+       var reg=/\./;
+       console.log(reg.test("aa"));
+       // 创建一个正则表达式检查一个字符串是否含有单词child
+       reg=/\bchild\b/;
+       console.log(reg.test("hello children"));
+
+        //接收一个用户的输入
+        var str=prompt("请输入你的用户名：");
+        console.log(str);
+        // 去除开头和结尾的空格,不去中间的
+        str=str.replace(/^\s*|\s*$/g,"");
+        console.log(str);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

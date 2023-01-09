@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            定义一个用来求两个数和的函数
+                可以在函数的()中来指定一个或多个形参
+
+        */ 
+       function sum(a,b){
+        console.log(a+b);
+       }
+        // 在条用函数时,可以在()中指定实参
+        // 参数将会赋值给函数中的对应形参
+       sum(4,2);
+
+       /*
+        调用函数时,解析器不会检查实参的类型和数量,所以要注意,是否有可能会接收到非法参数
+       */
+      sum(true,false,213);
+      
+        // 如果实参的数量小于形参,少的会变为Undefined
+       sum(13);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

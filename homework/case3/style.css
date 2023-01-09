@@ -1,0 +1,70 @@
+body,td,th{
+    font-family: 宋体;font-size: 12px;color: #666666;
+}
+body{
+    background-color: #c3c3c3;margin: 0px;
+    background-image: url(./Case3/images/img01.gif);background-repeat: repeat-x;
+}
+#header{
+    height: 110px;margin: 0 auto;
+    background-image: url(./Case3/images/bg0.gif);
+    background-repeat: repeat-x;
+}
+#header #logo{
+    float: left;
+    padding-top: 16px;
+    padding-left: 24px;
+}
+#header #logo span{
+    color: #0C6785;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: normal;
+    letter-spacing: 1px;
+    font-family: Arial;
+}
+#header #banner{
+    font-family: 黑体;
+    font-size: 46px;
+    color: #FF0000;
+    float: left;
+    margin-left: 30px;
+    padding-top: 23px;
+}
+#header #computer{
+    margin: 5px 5px 0 0;
+    float: right;
+}
+#main{
+    width: 98%;
+    margin: 0 auto;
+}
+#main #left{
+    background-color: #e0ecff;
+    float: left;
+    height: 300px;
+    width: 29%;
+}
+#main #right{
+    background-color: #fff;
+    float: right;
+    height: 300px;
+    width: 70%;
+}
+#main #right img{
+   width: 300px;
+   height: 200px;
+}
+#main #right p{
+    text-align: center;
+    padding-top: 20px;
+}
+#footer{
+    background-image: url(./Case3/images/img02.gif);
+    background-repeat: repeat-x;
+    text-align: center;
+    background-color: #e0ecff;
+    clear: both;
+    padding:20px 0;
+
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS</title>
+    <!--
+        第二种方式（内部样式表）
+            将样式编写到head中的style标签里
+            可以同时为多个标签设置样式
+            问题：只能对一个网页起作用，不能跨网页复用
+     -->
+     <style>
+         h1{color: green;font-size: 40px;}
+     </style>
+
+     <!-- 
+         第三种方式（外部样式表）
+            可以将CSS样式编写到一个外部的css文件中
+            然后通过link标签来引入外部的css文件
+            意味着只要想使用这个样式就可以直接引用，可以在不同页面进行复用
+      -->
+      <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- 
+        使用css来修改元素的样式
+     -->
+     <!--
+        第一种方式（内联样式，行内样式） 
+          在标签内部通过style属性来设置元素的样式
+          问题：只能对一个标签生效，开发时绝对不要使用内联样式
+
+
+    -->
+     <p style="color: red; font-size:60px;">第一种方式（内联样式，行内样式）</p>
+     <h1>第二种方式（内部样式表）</h1>
+     <h2>第三种方式（外部样式表）</h2>
+</body>
+</html>

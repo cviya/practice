@@ -1,0 +1,135 @@
+.top-bar-wrapper{
+    background-color: #000;
+}
+// 导航条的外部容器
+.top-bar{
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 48px; 
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+    &:hover{
+        color: rgb(197, 196, 196);
+    }
+}
+.left-menu{
+    &:hover{
+        .nav{
+            display: block;
+        }
+    }
+    .nav{
+        display: none;
+        position: absolute;
+        background-color: #000;
+        top:48px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        padding-top: 60px;
+        transition:.3s;
+        li{
+            width: 80%;
+            margin: 0 auto;
+            border-bottom: 1px #cecece solid;
+            a{
+                display: block;
+                line-height: 44px;
+                font-size: 14px;     
+            }
+            &:last-child a{
+                display: inline-block;
+                margin-right: 6px;
+            }
+            span{
+                color: #fff;
+                font-size: 14px;
+            }
+        }
+    }
+    .menu-icon{
+        width: 18px;
+        height: 48px;
+        position: relative;
+        li{
+            width: 18px;
+            height: 1px;
+            background-color: #fff;
+            position: absolute;
+            // 修改变形的原点
+            transform-origin: left center;
+            // 过渡效果
+            transition: .3s;
+        }
+        li:nth-child(1){
+            top: 18px;
+        }
+        li:nth-child(2){
+            top: 24px;
+        }
+        li:nth-child(3){
+            top: 30px;
+
+        }
+        // 鼠标移入效果
+        &:hover{
+            li:nth-child(1){
+                // 向下旋转
+                transform: rotateZ(40deg);
+            }
+            li:nth-child(2){
+                // 隐藏
+                opacity: 0;
+            }
+            li:nth-child(3){
+                // 向上旋转
+                transform: rotateZ(-40deg);
+                // 显示隐藏菜单
+            }
+        }
+    }
+}
+
+// 设置媒体查询
+@media only screen and (min-width:768px){
+    .left-menu{
+        order: 2;
+        flex-grow: 1;
+        // 显示菜单
+        .nav{
+            display: block;
+            display: flex;
+            position: static;
+            justify-content: space-around;
+            padding: 0;
+            transition: all 0s;
+            li{
+                width: auto;
+                border-bottom: none;
+                margin: 0;
+                a{
+                    line-height: 48px;
+                }
+                span{
+                    display: none;
+                }
+            }
+        }
+        // 隐藏菜单图标
+        .menu-icon{
+            display: none;
+        }
+    }
+    .logo{
+        order: 1;
+    }
+    .user-info{
+        order: 3;
+    }
+}

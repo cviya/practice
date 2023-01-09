@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 1560px;
+            position: absolute;
+            left: 0;
+        }
+        li{
+            list-style: none;
+            float: left;
+            margin:0 10px;
+           
+        }
+        #outer{
+            width: 500px;
+            height: 400px;
+            margin: 50px auto;
+            background-color: #bfa;
+            padding: 10px 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        #navDiv{
+            position: absolute;
+            /* 设置居中，也可以用js来设置 */
+            /* left: 50%;
+            transform: translateX(-50%); */
+            bottom: 20px;
+        }
+        #navDiv a{
+            float: left;
+            width: 10px;
+            height: 10px;
+            margin: 0 6px;
+            background-color: red;
+            opacity: 0.5;
+
+        }
+        #navDiv a:hover{
+            background-color: rgb(87, 84, 84);
+        }
+        img{
+            width: 500px;
+            height: 400px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var imgList=document.getElementById("imgList");
+            var imgArr=document.getElementsByTagName("img");
+            imgList.style.width=520*imgArr.length+"px";
+            var navDiv=document.getElementById("navDiv");
+            var outer=document.getElementById("outer");
+            // 设置居中
+            navDiv.style.left=(outer.offsetWidth-navDiv.offsetWidth)/2+"px";
+            var index=0;
+            var allA=document.getElementsByTagName("a");
+            allA[index].style.backgroundColor="rgb(87, 84, 84)";
+            for(var i=0;i<allA.length;i++){
+                // 为每个超链接都添加一个num属性
+                allA[i].num=i;
+                allA[i].onclick=function(){
+                    clearInterval(timer);
+                    // 获取点击超链接的索引，并将其设置为index
+                    index=this.num;
+                    // imgList.style.left=-520*index+"px";
+                    setA();
+                    move(imgList,-520*index,30);
+                    autoChange();
+                };
+            };
+            // index=0;
+            autoChange();
+            // 创建一个函数，用来开启自动切换图片
+            var timer;
+            function autoChange(){
+                // 开启一个定时器，用来定时切换图片
+                timer=setInterval(function(){
+                    index++;
+                    if(index==imgArr.length){
+                        index=0;
+                    }
+                    setA();
+                    move(imgList,-520*index,30);
+                }, 3000);
+            }
+            
+            // 创建一个方法用来设置选中的a
+            function setA(){
+                if(index>=imgArr.length-1){
+                    index=0;
+                    imgList.style.left=0+"px";
+                }
+                for(var i=0;i<allA.length;i++){
+                    allA[i].style.backgroundColor="";
+                }
+                allA[index].style.backgroundColor="rgb(87, 84, 84)";
+            };
+            
+            function move(obj,target,speed){
+                clearInterval(obj.timer);
+                var current=parseInt(getStyle(obj,"left"));
+                if(current>target){
+                    speed=-speed;
+                }
+                obj.timer=setInterval(function(){
+                    var oldValue=parseInt(getStyle(obj,"left"));
+                    var newValue=oldValue+speed;
+                    // 将新值设置给box1
+                    // obj.style.left=newValue+"px";
+                    if((speed<0&&newValue<target)||(speed>0&&newValue>target)){
+                        newValue=target;
+                    }
+                        obj.style.left=newValue+"px";
+                       if(newValue==target){
+                        clearInterval(obj.timer);
+                       }
+                },30);
+        };
+
+        function getStyle(obj,name){
+                if(window.getComputedStyle){
+                    // 正常浏览器
+                    return getComputedStyle(obj,null)[name];
+                }else{
+                    // ie浏览器
+                    return  obj.currentStyle[name];
+                }
+               };
+    };
+    </script>
+</head>
+<body>
+    <div id="outer">
+        <ul id="imgList">
+            <li>
+                <img src="./img/u=3157130627,2942506140&fm=193&f=GIF.jpg">
+            </li>
+            <li>
+                <img src="./img/u=3587945189,2578428673&fm=193&f=GIF.jpg">
+            </li>
+            <li>
+                <img src="./img/u=467801360,4187056514&fm=193&f=GIF.jpg">
+            </li>
+            <li>
+                <img src="./img/u=3157130627,2942506140&fm=193&f=GIF.jpg">
+            </li>
+        </ul>
+        <div id="navDiv">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </div>
+</body>
+</html>

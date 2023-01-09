@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            方法：
+                变量.getElementByTagName("") 获取当前元素下的标签名
+            属性：
+                变量.childNodes 获取当前元素的所有子节点
+                变量.children   获取当前元素的所有子元素
+                变量.firstChild 获取当前元素的第一个子节点 也可以用 变量.childNodes[0] 来表示
+                变量.firstElementsChild 获取当前元素的第一个子元素
+        */
+    </script>
+    <script>
+        window.onload=function(){
+            // 方法1
+            var btn=document.getElementById("btn1");
+            btn.onclick=function(){
+                var city=document.getElementById("city");
+                // 获取id为city下的li标签
+                var info=city.getElementsByTagName("li");
+                for(var i=0;i<info.length;i++){
+                    alert(info[i].innerHTML);
+                };
+            }
+            
+            // 方法2
+            var btn=document.getElementById("btn2");
+            btn.onclick=function(){
+                var city=document.getElementById("city");
+                // childNodes属性会获取包括文本节点的所有节点
+                // li标签中的空白也会当成文本节点
+                var info=city.childNodes;
+                for(var i=0;i<info.length;i++){
+                    alert(info[i].innerHTML);
+                }
+            }
+            // 方法3
+            var btn=document.getElementById("btn3");
+            btn.onclick=function(){
+                var city=document.getElementById("city");
+                // 获取id为city下的子元素
+                var info=city.children;
+                for(var i=0;i<info.length;i++){
+                    alert(info[i].innerHTML);
+                }
+            }
+
+            // 获取city下的第一个子节点
+            var btn=document.getElementById("btn4");
+            btn.onclick=function(){
+                var city=document.getElementById("city");
+                // 获取id为city下的第一个子节点(包括空白文本节点)
+                var info=city.firstChild;
+                // 获取id为city下的第一个子元素（不包括空白节点）
+                var info2=city.firstElementChild;
+                    alert(info2.innerHTML);     
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="outer">
+        <ul id="city">
+            <li>北京</li>
+            <li>上海</li>
+            <li>广州</li>
+            <li>深圳</li>
+        </ul>
+        <button id="btn1">按钮1</button>
+        <button id="btn2">按钮2</button>
+        <button id="btn3">按钮3</button>
+        <button id="btn4">按钮4</button>
+    </div>
+</body>
+</html>

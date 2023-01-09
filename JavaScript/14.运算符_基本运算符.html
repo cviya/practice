@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            运算符也叫操作符
+                通过运算符可以对一个和多个值进行运算
+                比如typeof就是运算符，可以获得一个值的类型，它的返回值是一个String类型
+
+            算术运算符
+                当对非Number类型的值进行运算时，会将这些值转换为Number然后运算
+                    任何值和NaN做运算都得NaN
+                + 加法运算  如果对两个字符串进行加法运算，会进行拼串；任何值和字符串做加法运算，都会转换为字符串再拼串
+                - 减法运算  String类型相减，String会转换为Number类型
+                * 乘法运算
+                / 除法运算
+                % 求余运算
+        */
+       var a=123;
+       var result=typeof a;
+       console.log(typeof result);
+
+       result=a+2;
+       console.log(result)
+
+       result=a+true;
+       console.log(result);
+
+       console.log("a="+a)
+       console.log(typeof a);
+
+       result=1+2+"3"; 
+       console.log("result="+result);
+       result="1"+2+3;
+       console.log("result="+result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

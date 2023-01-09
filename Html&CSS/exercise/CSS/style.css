@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.w,
+.top-bar,
+.banner,
+.center {
+  width: 17.325rem;
+  margin: 0 auto;
+}
+html {
+  font-size: 5.33333333vw;
+}
+a {
+  text-decoration: none;
+}
+.top-bar {
+  display: flex;
+  height: 4.375rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-bar a {
+  color: #23253d;
+}
+.banner img {
+  width: 100%;
+}
+.center {
+  display: flex;
+  height: 8.225rem;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: space-evenly;
+}
+.center a {
+  border-radius: 0.25rem;
+  width: 8.175rem;
+  height: 2.6rem;
+  line-height: 2.6rem;
+}
+.center a i {
+  margin: 0 0.25rem 0 0.25rem;
+}
+.center .Course {
+  background-color: orange;
+}
+.center .Star {
+  background-color: purple;
+}
+.center .Sub {
+  background-color: pink;
+}
+.center .Download {
+  background-color: blue;
+}
+/*# sourceMappingURL=./style.css.map */

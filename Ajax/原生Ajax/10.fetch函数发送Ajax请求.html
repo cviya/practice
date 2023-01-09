@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch发送Ajax请求</title>
+    <style>
+        #result{
+            width: 200px;
+            height: 100px;
+            border: 1px red solid;
+        }
+    </style>
+</head>
+<body>
+    <button>fetch发送请求</button>
+    <br><br>
+    <div id="result"></div>
+    <script>
+        const btn=document.querySelector("button");
+        const result=document.getElementById("result");
+        btn.onclick=function(){
+            fetch("http://127.0.0.1:8000/fetch",{
+                // 请求方法
+                method:"POST", 
+                // 请求头
+                headers:{
+                    name:"cwy"
+                },
+                // 请求体
+                body:"username=admin&password=admin"
+            }).then(response=>{
+                return response.text();
+            }).then(response=>{
+                console.log(response)
+                result.innerHTML=response;
+            });
+        }
+    </script>
+</body>
+</html>

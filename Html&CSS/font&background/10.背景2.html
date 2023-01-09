@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 1200px;
+            height: 1200px;
+            background-color: #bfa;
+            background-image: url(../exercise/练习的截图/01图片列表/02_fruit.png);
+            /*
+                 background-repeat
+                    可选值：
+                        repeat-x 以X轴平铺
+                        repeat-y  以Y轴平铺
+                        no-repeat  不平铺
+            */
+            background-repeat: no-repeat;
+            /* 
+                background-position
+                    可选值：
+                        top right bottom left center 例：background-position: center right
+                        也可以用偏移量设置位置，例： background-position:30px 40px
+            */
+            
+            border: 10px red double;
+            /* 
+                background-clip
+                    可选值：
+                        border-box 默认值，背景会出现在边框的下边
+                        padding-box 背景不会出现在边框，只出现在内容区和内边距
+                        content-box 背景只会出现在内容区
+            */
+            /* background-clip: content-box; */
+            /* padding: 4px; */
+            /* 
+                background-origin 背景图片的偏移量计算的原点
+                    可选值：
+                        padding-box 默认值，从内边距处开始计算
+                        content-box 背景图片的偏移量从内容区处计算
+                        border-box 背景图片的变量从边框处开始计算
+            */
+            background-origin: content-box;
+            background-position:0px 0px;
+            /* 
+                background-size 设置背景图片的大小
+                    可选值：
+                        第一个值表示宽度
+                        第二个值表示高度
+                            如果只有一个，第二个默认是auto
+                        cover图片的比例不变，将元素铺满
+                        contain图片的比例不变，将图片在元素中完整显示
+
+            */
+            background-size: contain;
+        }
+        .box2{
+            width: 300px;
+            height: 300px;
+            background-image: url(../exercise/练习的截图/01图片列表/03_flower.png);
+            background-attachment: fixed;
+        }
+
+        /* 
+            background-color
+            background-image
+            background-position
+            background-origin
+            background-clip
+            background-attachment
+            background-size
+            background-repeat
+
+            background背景相关的简写属性，所有背景相关的样式没有顺序要求，也没有哪个属性是必须写的
+            除了background-position必须写在background-size前面,并且用/隔开
+                background-origin必须写在background-clip前面,并且用/隔开
+        */
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

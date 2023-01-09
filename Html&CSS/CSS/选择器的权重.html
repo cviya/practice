@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            发生样式冲突时，由选择器的权重决定
+
+            选择器的权重：
+                内联样式    1000
+                id选择器    100
+                类、伪类选择器  10
+                元素选择器  1
+                通配选择器 0
+                继承的样式 没有优先级
+
+                比较优先级时，需要将所有的选择器相加计算
+                如果优先级计算后相同，优先使用靠下的样式
+
+                在某一个样式后添加!important，则此样式获得最高优先级(尽量不要用)
+        */
+        #box1{
+            color: green!important; /*加了!important,优先级最高*/
+        }
+        div#box1{
+            color: yellow;
+        }
+
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1" class="red" style="color: aliceblue;">我是一个div</div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var obj=new Object();
+        obj.name="孙悟空";
+        /*
+            属性名:
+                对象的属性名不强制要求遵守标识符的规范,但使用时还是尽量遵守
+        */ 
+        obj.var=123
+        console.log(obj.var);
+        /*
+            如果要使用特殊的属性名,不能采用.的方式来操作
+             语法:对象["属性名"]=属性值
+        */
+       obj["123"]=456;
+       console.log(obj["123"]);
+
+       /*
+            JS对象的属性值,可以是任意的数据类型
+       */ 
+      obj.test=true;
+    //   obj.test=null;
+    //   obj.test=undefined;
+      console.log(obj.test);
+
+    //   对象里可以再嵌套对象
+    var obj2=new Object();
+    obj2.name="猪八戒";
+    obj2.age="18";
+    obj.inner=obj2;
+    console.log(obj.inner);
+
+    /*
+        in运算符
+            通过该运算符可以检查一个对象中是否含有指定的属性
+                如果有则返回true,没有则返回false
+            语法:
+                "属性名" in 对象
+    */ 
+   
+    // 检查obj中是否含有test2属性
+    console.log("test" in obj);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

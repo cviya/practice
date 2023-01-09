@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun(){
+            /*
+            谁调用了this就是谁
+                obj调用了fun，this就是obj
+                obj2调用了fun，this就是obj2
+            */ 
+            console.log(this.name);
+        };
+        var obj={
+            name:"孙悟空",
+            sayName:fun
+        };
+        var obj2={
+            name:"沙和尚",
+            sayName:fun
+        };
+        obj.sayName();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

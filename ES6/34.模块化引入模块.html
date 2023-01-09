@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 模块化</title>
+</head>
+<body>
+    <script type="module">
+        // // 1.通用的导入方式
+        // //引入m1.js模块内容到变量m1里边
+        // import *as m1 from "./Promise实例/js/m1.js";
+        // //引入m2.js模块内容到变量m2里边
+        // import *as m2 from "./Promise实例/js/m2.js";
+        // //引入m3.js模块内容到变量m3里边
+        // import *as m3 from "./Promise实例/js/m3.js";
+        // console.log(m1);
+        // m1.teach();
+        // console.log(m2);
+        // console.log(m3);
+        // m3.default.address();
+
+        // 2.解构赋值形式
+        // import {school,teach} from "./Promise实例/js/m1.js";
+        // import {school as sz,intro} from "./Promise实例/js/m2.js";
+        // console.log(school);
+        // console.log(sz);
+        // import {default as m3} from "./Promise实例/js/m3.js";
+        // console.log(m3);
+        // m3.address();
+
+        // 3.简便形式，只针对默认暴露
+        // import m3 from "./Promise实例/js/m3.js";
+        // console.log(m3);
+
+    </script>
+        <!-- 
+            4.通过js文件引入
+         -->
+         <script src="./Promise/js/app.js" type="module"></script>
+         
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async与await结合发送ajax请求</title>
+</head>
+<body>
+    <script>
+        function sendAjax(url){
+            return new Promise((resolve,result)=>{
+            const xhr=new XMLHttpRequest();
+            xhr.open("GET",url)
+            xhr.send();
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState===4){
+                    if(xhr.status>=200&&xhr.status<300){
+                        resolve(xhr.response);
+                    }else{
+                        reject.log(xhr.status);
+                    }
+                }
+            }
+        })
+        }
+        // promise then方法测试
+        sendAjax("https://api.uomg.com/api/get.qqdj").then(value=>{
+            console.log(value)
+        },reason=>{
+            console.log("失败");
+        })
+        // async与await测试
+        async function main(){
+            let result=await sendAjax("https://api.uomg.com/api/get.qqdj");
+            console.log(result);
+        }
+        main();
+    </script>
+</body>
+</html>

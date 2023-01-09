@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        .box2{
+            width: 40px;
+            height: 40px;
+            background-color: black;
+            position: absolute;
+            /* 
+                当我们开启了绝对定位后：
+                    水平方向的布局等式就需要添加left，right两个值
+                    需要满足left+margin-left+padding-left+width+padding-right+margin-right+right=父元素的可见内容
+
+                    垂直方向的布局等式需要添加top，bottom
+                    需要满足top+margin-top+padding-top+height+margin-bottom+padding-bottom+bottom=父元素的可见内容
+            */
+            /* 
+            margin-top: auto; 
+            margin-bottom: auto;
+            margin-left: auto;
+            margin-right: auto;  
+            */
+            /* 以上4步可以简写为 */
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+     <div class="box1">
+        <div class="box2"></div>
+     </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            background-color: aqua;
+            height: 600px;
+            /* 
+                默认情况下父元素的高度被内容撑开
+            */
+        }
+        .inner{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin:30px;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: violet;
+
+            /* 
+                子元素是在父元素的内容区中排列的，如果子元素的大小超过了父元素，会溢出
+                使用overflow可处理溢出
+                overflow可选值
+                    visible 默认值 子元素会从父元素溢出
+                    hidden  溢出部分会被隐藏
+                    scroll 会生成两个滚动条
+                    auto   根据需要生成滚动条
+            */
+            overflow: auto;
+        }
+        .box2{
+            width: 200px;
+            height: 300px;
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="outer">
+        <div class="inner"></div>
+        <div class="inner"></div>
+    </div> -->
+    <div class="box1">
+        我省2022年高考志愿填报工作已经顺利结束，招生录取工作将于7月8日至8月11日进行。其中，提前批为7月8日至16日，本科批为7月14日至29日，专科批为7月30日至8月11日。工作日程后续如有调整，请以省教育考试院官微官网的最新通知为准。
+
+
+
+            录取期间，广东省教育考试院将通过官微官网公布首次投档情况、征集志愿办法、征集志愿投档情况等考生应知尽知的信息；同时，每天将前一天已录取考生信息通过考生报名时绑定的手机号推送给考生，考生也可以通过广东省教育考试院官微小程序等途径查询录取结果。
+            
+           
+    </div>
+    
+</body>
+</html>

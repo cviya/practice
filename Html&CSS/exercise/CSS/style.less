@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@total-width:750px;
+@center-width:(693/40rem);
+.w{
+    width:@center-width;
+    margin: 0 auto;
+}
+// 设置根元素
+html{
+    // 设置rem的比值
+    font-size: (100/@total-width*40vw);
+}
+a{
+    text-decoration: none;
+}
+// 设置头部header
+.top-bar:extend(.w){
+    // 设置弹性容器
+    display: flex;
+    // 设置高度
+    height: (175/40rem);
+    justify-content: space-between;
+    align-items: center;
+
+    a{
+        color: #23253d;
+        
+    }
+}
+.banner:extend(.w){
+    img{
+        width: 100%;
+    }
+}
+.center:extend(.w){
+    display: flex;
+    height: (329/40rem);
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-evenly;
+    a{
+        border-radius: (10/40rem);
+        width: (327/40rem);
+        height: (104/40rem);
+        line-height: (104/40rem);
+        
+        i{
+            margin: 0 (10/40rem) 0 (10/40rem);
+        }
+    }
+    
+    .Course{
+        background-color: orange;
+    }
+    .Star{
+        background-color: purple;
+    }
+    .Sub{
+        background-color: pink;
+    }
+    .Download{
+        background-color: blue;
+    }
+}

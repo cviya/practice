@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格与表单的作用</title>
+    <style>
+    .file {
+    position: relative;
+    background-color: buttonface;
+    border: 1px rgb(2, 2, 2) solid;
+    border-radius: 4px;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+}
+.file input {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+a:link,a:visited{
+    color:buttontext;
+    font-size: 14px;
+}
+    </style>
+</head>
+<body>
+    <br>
+    <form action="uploadServle" methond="post" enctype="multipart/form-data" name="form1" id="form1">
+        <table width="700px" border="1" align="center">
+            <tr>
+                <th>姓名</th>
+                <td>
+                    <input type="text" name="uname" size="20" maxlength="20">
+                </td>
+            </tr>
+            <tr>
+                <th>密码</th>
+                <td>
+                    <input type="password" name="passwd" size="20">
+                </td>
+            </tr>
+            <tr>
+                <th>兴趣</th>
+                <td>
+                    体育<input type="checkbox" name="interest" value="tiyu">&nbsp;
+                    美术<input type="checkbox" name="interest" value="meishu">&nbsp;
+                    音乐<input type="checkbox" name="interest" value="yinyue">&nbsp;
+                </td>
+            </tr>
+            <tr>
+                <th>性别</th>
+                <td>
+                    男<input type="radio" name="gender" value="boy" checked>
+                    女<input type="radio" name="gender" value="girl">
+                </td>
+            </tr>
+            <tr>
+                <th>学历</th>
+                <td>
+                    <select name="degree">
+                        <option value="zhuanke">专科</option>
+                        <option selected value="benke">本科</option>
+                        <option value="shuoshi">硕士</option>
+                        <option value="boshi">博士</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>评论</th>
+                <td>
+                    <textarea name="comment" cols="50" rows="5">这里写内容······</textarea>
+                </td>
+            </tr>
+            <tr>
+                <th>文件上传</th>
+                <td>
+                    <input type="text">
+                    <a href="#" class="file">浏览...
+                        <input type="file">
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="提交">&nbsp;&nbsp;
+                    <input type="reset" value="重置">&nbsp;&nbsp;
+                    <input type="button" value="按钮" onclick="JavaScript:alert('hello world')">&nbsp;&nbsp;
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

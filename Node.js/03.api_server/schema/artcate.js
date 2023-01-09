@@ -1,0 +1,32 @@
+const joi=require('@hapi/joi');
+
+const name=joi.string().required();
+const alias=joi.string().alphanum().required();
+const id=joi.number().integer().min(1).required();
+
+exports.add_cate_schema={
+    // 希望对req.body里的name和alias进行验证
+    body:{
+        name,
+        alias
+    }
+}
+exports.delete_cate_schema={
+    params:{
+        id
+    }
+}
+exports.get_cate_schema={
+    params:{
+        id
+    }
+}
+exports.update_cate_schema={
+    params:{
+        id
+    },
+    body:{
+        name,
+        alias
+    }
+}

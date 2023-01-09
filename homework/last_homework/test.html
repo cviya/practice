@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<script type="text/javascript">
+function disable()
+  {
+  document.getElementById("accept").disabled=true
+  }
+function enable()
+  {
+  document.getElementById("accept").disabled=false
+  }
+</script>
+</head>
+<body>
+
+<input type="checkBox" onclick="if (this.checked) {enable()} else {disable()}">同意协议
+<br />
+<br />
+<br />
+<input type="button" id="accept"  disabled="true" value="确定">
+
+</body>
+</html>
+
+

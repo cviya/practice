@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            自增
+                通过自增可以使变量在自身的基础上增加1
+                对于一个变量自增以后，原变量的值会立即自增1
+                    自增分成两种：
+                        后++(a++)原变量自增前的值  
+                        先++(++a)原变量自增后的值
+                    自减分成两种：
+                        后--(a--)原变量自减前的值  
+                        先--(--a)原变量自减后的值
+        */
+       var a=1;
+       a++;
+       console.log("a="+a);
+
+       var b=1;
+       console.log("b="+(++b));
+
+       var c=1;
+       console.log("c="+c++);
+       console.log("c="+c);
+
+       var d=20;
+                // 20 + 22 + 22
+       var result=d++ + ++d + d;
+       console.log("result="+result);
+
+       var e=20;
+        /*
+         等价于 var f=e++;
+                e=f;
+         */
+       e=e++;
+       console.log("result="+ e);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

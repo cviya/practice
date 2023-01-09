@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            History
+                可以用来操作浏览器向前或向后翻页
+        */ 
+    //    length
+            // 属性 可以获取当前访问的链接数量
+       alert(history.length);
+        /* back()
+                可以用来回退到上一个页面，作用和浏览器的回退按钮一样
+            forward()
+                可以用来跳转到下一个页面，作用和浏览器的前进按钮一样
+            go()
+                可以用来跳转到指定的页面
+                它需要一个整数作为参数
+                    1：向前跳转一个页面，相当于forward()
+                    2：向前跳转两个页面
+                    -1：向后跳转一个页面，相当于back()
+                    -2：向后跳转两个页面
+        */
+        window.onload=function(){
+            var btn01=document.getElementById("btn01");
+            btn01.onclick=function(){
+                history.back();
+            };
+
+            var btn02=document.getElementById("btn02");
+            btn02.onclick=function(){
+                history.forward();
+            };
+        };
+    </script>
+</head>
+<body>
+    <a href="./01.JS的输出语句.html">gg</a>
+    <button id="btn01">点击一下回退页面</button>
+    <button id="btn02">点击一下跳转下一个页面</button>
+</body>
+</html>

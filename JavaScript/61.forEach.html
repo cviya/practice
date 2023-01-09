@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            一般我们都是使用for循环去遍历数组
+            JS中还为我们提供了一个方法，用来遍历数组
+            forEach()
+                像这种函数，由我们创建但是不由我们调用的，称为回调函数
+                数组中有几个元素函数就会执行几次，每次执行时，浏览器会将遍历到的元素以实参的形式传递进来，我们可以来定义形参读取这些内容
+                浏览器会在回调函数中传递三个参数：
+                    第一个参数，就是当前正在遍历的元素
+                    第二个参数，索引
+                    第三个参数，就是正在遍历的数组
+        */ 
+       window.onload=function(){
+        var arr=["孙悟空","沙和尚","猪八戒"];
+        arr.forEach(function(value,index,obj){
+        console.log=(arr.value);
+       });
+       }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

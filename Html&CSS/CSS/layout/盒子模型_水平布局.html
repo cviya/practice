@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width: 800px;
+            height: 200px;
+            background-color: blueviolet;
+            border: 5px yellow solid;
+        }
+        .inner{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            /* border-width: 0px 4px 0px;
+            border-color: black;
+            border-style: solid; */
+           
+            /* 
+            一个元素在其父元素中，水平布局必须要满足以下等式
+            margin-left+border-left+padding-left+width+padding-right+border-right+margin-right
+            如果不满足以上条件，则称为过度约束，等式会自动调整
+                调整情况：
+                    如果这七个值没有为auto的情况，则浏览器会自动调整margin-right
+
+            */
+            /* margin-left:auto;
+            margin-right: auto; */
+            /* 
+                以上“使一个元素在其父元素中水平居中”写法可简写为
+                width:xxxpx
+                margin:0 auto;
+            */
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>

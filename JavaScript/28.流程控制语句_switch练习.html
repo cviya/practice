@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            对于成绩大于60的，输出合格，低于60的，输出不合格
+        */
+
+       /*
+       方法一：
+       var score=+prompt("输入成绩");
+       switch(parseInt(score/10)){
+        case 9:
+            alert("合格");
+            break;
+        case 8:
+            alert("合格");
+            break;
+        case 7:
+            alert("合格");
+            break;
+        case 6:
+            alert("合格");
+            break;
+        case 5:
+            alert("不合格");
+            break;
+        case 4:
+            alert("不合格");
+            break;
+        case 3:
+            alert("不合格");
+            break;
+        case 2:
+            alert("不合格");
+            break;
+        case 1:
+            alert("不合格");
+            break;
+        default:
+            alert("成绩不存在");
+            break;
+       }
+       */
+
+    //    方法二：
+    var score=+prompt("输入成绩");
+    switch(true){
+        case score>=60:
+            alert("合格");
+            break;
+        default:
+            alert("不合格");
+            break;
+    }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

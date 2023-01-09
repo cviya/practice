@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            function btnOnclick(idStr,fun){
+                var btn=document.getElementById(idStr);
+                btn.onclick=fun;
+            };
+            var checkedAllBox=document.getElementById("checkedAllBox");
+            var checkbox=document.getElementsByName("sport");
+            // 点击全选按钮
+            btnOnclick("all",function(){
+                // alert("全都选中了");
+                // 获取三个多选框
+                var allSport=document.getElementsByName("sport");
+                for(var i=0;i<allSport.length;i++){
+                        allSport[i].checked=true;
+                };
+                checkedAllBox.checked=true;
+            });
+
+            btnOnclick("none",function(){
+                // alert("全部取消了");
+                var allSport=document.getElementsByName("sport");
+                for(var i=0;i<allSport.length;i++){
+                    allSport[i].checked=false;
+                };
+                checkedAllBox.checked=false;
+            });
+
+            btnOnclick("reverse",function(){
+                // alert("反选");
+                var allSport=document.getElementsByName("sport");
+                checkedAllBox.checked=true;
+                for(var i=0;i<allSport.length;i++){
+                    // if(allSport[i].checked==true){
+                    //     allSport[i].checked=false;
+                    // }
+                    // else{
+                    //     allSport[i].checked=true;
+                    // }
+                    // 以上可以简写为
+                    allSport[i].checked=!allSport[i].checked;
+                    if(!checkbox[i].checked){
+                                checkedAllBox.checked=false;
+                               
+                            }
+                };
+            });
+
+            // 提交按钮
+            btnOnclick("submit",function(){
+                var allSport=document.getElementsByName("sport");
+                
+                for(var i=0;i<allSport.length;i++){
+                    if(allSport[i].checked){
+                        alert(allSport[i].value);
+                    }
+                };
+               
+            });
+
+            // 全选/全部选
+            btnOnclick("checkedAllBox",function(){
+                var allSport=document.getElementsByName("sport");
+                for(var i=0;i<allSport.length;i++){
+                    allSport[i].checked=checkedAllBox.checked;
+                };
+               
+            });
+
+            // 为每个框构建一个点击事件
+                for(var i=0;i<checkbox.length;i++){
+                    checkbox[i].onclick=function(){
+                        checkedAllBox.checked=true;
+                        // 判断3个选项是否全选
+                        for(var j=0;j<checkbox.length;j++){
+                            if(!checkbox[j].checked){
+                                checkedAllBox.checked=false;
+                                break;
+                            }
+                        }
+                  }
+            }
+        };
+    </script>
+</head>
+<body>
+    <div class="out">
+        <p>你最喜欢的运动是什么？</p><input id="checkedAllBox" type="checkbox">全选/全不选
+        <form action="">
+            篮球<input type="checkbox" name="sport" value="篮球">
+            羽毛球<input type="checkbox" name="sport" value="羽毛球">
+            乒乓球<input type="checkbox" name="sport" value="乒乓球">
+        </form>
+        <button id="all">全选</button>
+        <button id="none">全不选</button>
+        <button id="reverse">反选</button>
+        <button id="submit" type="submit">提交</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1,.box3{
+            width: 200px;
+            height: 200px;
+        }
+        .box1{
+            background-color: rgb(193, 227, 44);
+            float: left;
+        }
+        .box2{
+            width: 300px;
+            height: 300px;
+            background-color: rgb(223, 12, 12);
+            float: left;
+        }
+        .box3{
+            background-color: rgb(9, 219, 44);
+            /* 
+                清除浮动元素对当前元素所产生的影响
+                可选值：
+                left 清除左侧浮动元素对当前元素的影响
+                right 清除右侧浮动元素对当前元素的影响
+                both 清除两侧中最大元素的那侧
+            */
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+</body>
+</html>

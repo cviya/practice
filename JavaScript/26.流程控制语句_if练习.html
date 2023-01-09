@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            从键盘输入小明的期末成绩
+            当成绩为100时，奖励一台BMW
+            当成绩为80-99时，奖励iphone14
+            当成绩为60-80时，奖励一本参考书
+            其它成绩，没有奖励
+
+            prompt()可以弹出一个提示框，该提示框会有一个文本框
+            该字符串将会作为提示框的提示文字
+        */
+       var score=prompt("请输入小明的期末成绩：")
+       if(score>100||score<0||isNaN(score)){
+        alert("成绩不存在");
+       }else{
+        if(score<60){
+        alert("没有奖励");
+       }else if(score<80){
+        alert("奖励一本参考书");
+       }else if(score<=99){
+        alert("奖励iPhone14");
+       }else if(score<101){
+        alert("奖励一台BMW");
+       }
+       }
+       
+       /*
+        身高：180以上 财富：1000万以上 颜值：80以上
+        如果以上3个条件同时满足：一定要嫁给他
+        如果满足其中一个条件：嫁吧，还可以
+        如果都不满足：不嫁
+        */
+       var height=prompt("请输入身高(cm)");
+       var money=prompt("请输入资产(万)");
+       var handsome=prompt("请输入颜值(分)");
+       if(height>180&&money>1000&&handsome>80){
+        alert("一定要嫁给他");
+       }else if(height>180||money>1000||handsome>80){
+        alert("嫁吧，还可以");
+       }else{
+        alert("不嫁");
+       }
+    //    prompt()函数的返回值是String类型的，在其前面加个+号可以转换为Number类型
+       var num1=+prompt("输入第一个数");
+       var num2=+prompt("输入第二个数");
+       var num3=+prompt("输入第三个数");
+       if(num1<num2&&num1<num3){
+        // num1最小，比较num2和num3
+        if(num2<num3){
+            alert(num1+","+num2+","+num3);
+        }else{
+            alert(num1+","+num3+","+num2);
+        }
+       }
+       else if(num2<num1&&num2<num3){
+        // num2最小，比较num1和num3
+        if(num1<num3){
+            alert(num2+","+num1+","+num3);
+        }
+        else{
+            alert(num2+","+num3+","+num1);
+        }
+       }
+       else{
+        // num3最小，比较num1和num2
+        if(num1<num2){
+            alert(num3+","+num1+","+num2);
+        }else{
+            alert(num3+","+num2+","+num1);
+        }
+       }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

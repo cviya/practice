@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 70%;
+            /* border: 1px solid; */
+            /* border-spacing:0px; 指定边框间的距离
+            /* border-collapse: collapse; 设置边框的合并 */
+            
+            border-collapse:collapse;
+        }
+        td,th{
+            /* border: 1px solid; */
+            height: 30px;
+            /* 默认情况下td是垂直居中的，可以通过vertical-align设置格式 */
+            /* vertical-align: top; */
+            text-align: left;
+        }
+        /* 如果没有使用tbody而是直接使用tr，那么浏览器会自动创建一个tbody，并把tr全都放到tbody里，所以tr不是table的子元素 */
+         tbody>tr:nth-child(1){
+            background-color: rgb(231, 234, 230);
+         }
+    </style>
+</head>
+<body>
+    <div id="table">
+        <input type="text">
+    <button id="search">查询</button>
+    <br><br>
+    <table>
+        <tr>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>学号</th>
+            <th>手机号码</th>
+            <th>申请时间</th>
+            <th>申请理由</th>
+            <th>地址</th>
+        </tr>
+        <tr>
+            <td>陈子康</td>
+            <td>男</td>
+            <td>2008011033</td>
+            <td>13711111111</td>
+            <td>2022-11-14</td>
+            <td>想打胶</td>
+            <td>桃园</td>
+        </tr>
+        <tr>
+            <td>陈裕龙</td>
+            <td>男</td>
+            <td>2008011017</td>
+            <td>13722222222</td>
+            <td>2022-11-14</td>
+            <td>想操逼</td>
+            <td>女生1栋</td>
+        </tr>
+        <tr>
+            <td>魏嘉俊</td>
+            <td>男</td>
+            <td>2008011039</td>
+            <td>13722222222</td>
+            <td>2022-11-14</td>
+            <td>想被黑丝足交</td>
+            <td>教1</td>
+        </tr>
+    </table>
+    </div>
+</body>
+</html>

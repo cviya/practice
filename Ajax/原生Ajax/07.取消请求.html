@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>取消请求</title>
+    <style>
+        #result{
+            width: 200px;
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="result"></div>
+    <br>
+    <button>点击发送</button>
+    <button>点击取消</button>
+    <script>
+        const result=document.querySelector("#result");
+        const btns=document.getElementsByTagName("button");
+        let xhr;
+        btns[0].onclick=function(){
+            xhr=new XMLHttpRequest();
+            xhr.open("GET","http://127.0.0.1:8000/delay");
+            xhr.send();
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState===4){
+                    if(xhr.status>=200&&xhr.status<300){
+                        result.innerHTML=xhr.response;
+                    }
+                }
+            }
+        };
+        // abort()取消请求函数
+        btns[1].onclick=function(){
+            xhr.abort();
+        }
+    </script>
+</body>
+</html>

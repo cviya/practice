@@ -1,0 +1,307 @@
+/* 主页index.html的样式 */
+
+/* 顶部导航条的容器 */
+.top-banner{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #333;
+}
+/* 导航条内容的容器 */
+.inner{
+    width: 1226px;
+    height: 100%;
+    margin:0 auto;
+} 
+/* 设置左侧导航栏 */
+.ul-left li{
+    float: left;
+    margin:0 4px;
+}
+/* 设置购物车导航栏 */
+.shopping-car{
+    float: right;
+}
+.shopping-car a{
+    width: 150px;
+    background-color: #424242;
+    text-align: center;
+}
+.shopping-car:hover a{
+    background-color: white;
+    color: orange;
+}
+.shopping-car:hover .shop-list{
+    display:block;
+}
+.shopping-car .shop-list{
+    position: absolute;
+    width: 180px;
+    background-color: white;
+    right: 82px;
+    line-height: 150px;
+    text-align: center;
+    border-width: 0px 1px 1px;
+    border-color: rgba(122, 120, 120, 0.572);
+    border-style: solid;
+    display: none;
+}
+/* 设置右侧导航栏 */
+.ul-right{
+    float:right;
+}
+/* 设置右侧导航栏 */
+.ul-right li{
+    float: left;
+    margin:0 5px;
+}
+/* 设置中线 */
+.ul-left .line,.ul-right .line{
+    width: 1px;
+    height: 20px;
+    background-color: rgba(102, 97, 97, 0.517);
+    margin: 15px 8px;
+}
+/* 设置a标签 */
+.top-banner a{
+    display: block;
+}
+.top-banner a:link,.top-banner a:visited{
+    text-decoration: none;
+    color: #9e9d9d;
+}
+.top-banner  a:hover{
+    color: white;
+}
+/* 隐藏二维码 */
+li .qrcode{
+    /* display: none; */
+    position: absolute;z-index: 77;
+    left: -32px;
+    width: 124px;
+    /* height: 148px; */
+    height: 0px;
+    overflow: hidden;
+    line-height: 1;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    /* 用于为样式设置过渡效果 */
+    transition: height 0.3s;
+}
+/* 显示二维码 */
+li:hover .qrcode{
+    /* display: block; */
+    height: 148px;
+}
+/* 显示小三角形 */
+li:hover .app::after{
+    /* display: none; */
+    content: '';
+    position: absolute;
+    width: 0;height: 0;
+    border: 7px transparent solid;
+    border-top: none;
+    border-bottom-color: #fff;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+/* 设置二维码图片大小 */
+.ul-left .qrcode img{
+    width: 90px;
+    height: 90px;
+    margin: 17px 17px;
+    
+}
+/* 小米商城字体颜色 */
+.qrcode span{
+    color:#000;
+}
+/* .app绝对定位 */
+.app{
+    position: relative;
+}
+
+
+
+.logo-banner{
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    position: relative;
+}
+.logo-inner{
+    width: 1226px;
+    height: 100px;
+    margin:0 auto;
+}
+
+.header .logo{
+    float: left;
+    margin-top: 22px;
+    width: 55px;
+    height: 55px;
+    position: relative;
+    overflow: hidden;
+}
+.header .logo a{
+    display: block;
+    width: 55px;
+    height: 55px;
+    background-image: url(../img/mi.png);
+    background-size: 55px 55px;
+    position: absolute;
+    left: 0;
+    transition: left 0.3s;
+}
+.header .logo .home{
+    left: -55px;
+    background-image: url(../img/src=http___www.newdesignfile.com_postpic_2009_04_house-icon-home-button_263840.jpg&refer=http___www.newdesignfile.webp);
+    background-size: 55px 55px;
+}
+.header .logo:hover .mi{
+    left: 55px;
+}
+.header .logo:hover .home{
+    left: 0;
+}
+
+
+.intro{
+    width: 792px;
+    height: 100px;
+    text-align: center;
+    float: left;
+    padding-left: 58px;
+}
+.intro li a{
+    text-decoration: none;
+    color: #000;
+    float: left;
+    margin-right: 20px;
+}
+.intro li a:hover{
+    color: #e6960b;
+}
+.all-goods{
+    visibility: hidden;
+}
+.goods-info{
+    height:0;
+    /* height: 228px; */
+    width: 100%;
+    background-color: #fff;
+    /* border-top: 1px solid rgb(224, 224, 224); */
+    position: absolute;
+    top: 100px;
+    left: 0;
+    transition: height 0.3s;
+    z-index: 999;
+    /* box-shadow: 0 5px 3px rgba(0, 0, 0, .2); */
+}
+/* .intro li:not(:nth-child(10)):not(:nth-child(9)):hover~.goods-info, */
+.intro .show-goods:hover~.goods-info,
+.goods-info:hover{
+    height: 228px;
+    border-top: 1px solid rgb(224, 224, 224);
+    box-shadow: 0 5px 3px rgba(0, 0, 0, .2);
+}
+.search{
+    float: right;
+}
+.search .fas{
+    margin-left: -8px;
+}
+
+
+.middle-banner{
+    width: 100%;
+    height: 460px;
+}
+.middle{
+    width: 1226px;
+    height: 460px;
+    margin: 0 auto;
+}
+.nav-left{
+    width: 234px;
+    height: 460px;
+    background-color: #bab8b8;
+    float: left;
+}
+.nav-left li{
+    text-align: left;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+}
+.nav-left li a{
+    display: block; 
+    text-decoration: none;
+    color: rgb(244, 242, 242);
+
+}
+.nav-left .fas{
+    margin-right: 15px;
+    float: right;
+}
+.nav-left li:hover{
+    background-color: #e6960b;
+}
+
+
+.img-list img{
+    width: 992px;
+    height: 460px;
+    position: absolute;
+}
+.fixed{
+    width: 20px;
+    height: 200px;
+    background-color: aqua;
+    position: fixed;
+    bottom: 50px;
+    right: 50%;
+    margin-right: -634px;
+    
+}
+
+
+.ad{
+    height: 170px;
+    position: relative;
+    top: 14px;
+    /* float: left; */
+}
+.shortcut{
+    width: 234px;
+    height: 170px;
+    background-color: #424242;
+    float: left;
+    margin-right: 14px;
+}
+.shortcut a{
+    display: block;
+    text-decoration: none;
+    color: rgb(147, 148, 148);
+    float: left;
+    height: 84px;
+    width: 76px;
+    text-align: center;
+    padding-top: 14px;
+}
+.shortcut a:hover{
+    color: #fff;
+}
+.shortcut i{
+    display: block;
+    margin-bottom: 5px;
+}
+.ad-img img{
+    width: 316px;
+    height: 170px;
+    float: left;
+    margin-right: 10px;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .clock{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            border-radius: 50%;
+            margin: 0 auto;
+            margin-top: 30px;
+            position: relative;
+            border: 10px black solid;
+        }
+        .clock>div{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+        .hour-wrapper{
+            width: 60%;
+            height: 60%;
+            animation: turn 43200s infinite;
+        }
+        .hour{
+            width: 7px;
+            height: 50%;
+            background-color: red;
+            margin: 0 auto;
+        }
+        .min-wrapper{
+            width: 80%;
+            height: 80%;
+            animation: turn 3600s infinite;
+        }
+        .min{
+            width: 5px;
+            height: 50%;
+            background-color: red;
+            margin: 0 auto;
+        }
+        .sec-wrapper{
+            width: 90%;
+            height: 90%;
+            animation: turn 60s infinite;
+        }
+        .sec{
+            width: 3px;
+            height: 50%;
+            background-color: red;
+            margin: 0 auto;
+        }
+        @keyframes turn {
+            from{
+                transform: rotateZ(0);
+            }
+            to{
+                
+                transform: rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="hour-wrapper">
+            <div class="hour"></div>
+        </div>
+        <div class="min-wrapper">
+            <div class="min"></div>
+        </div>
+        <div class="sec-wrapper">
+            <div class="sec"></div>
+        </div>
+    </div>
+</body>
+</html>

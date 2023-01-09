@@ -1,0 +1,54 @@
+/* CSS Document */
+#page #login #form1 #content {
+	text-align: center;
+	padding-top: 20px;
+}
+#page {
+	width: 98%;
+	margin: 0 auto;
+}
+#page #login {
+	background-color: #FFFFFF;
+	background-image: url(../images/img03.png);
+	background-repeat: repeat-x;
+	width: 500px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#page #login #title {
+	background-image: url(../images/img04.png);
+	background-repeat: no-repeat;
+	letter-spacing: 1px;
+	height: 60px;
+	text-align: center;
+}
+#page #login #title h1 {
+	font-size: 23px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-image: url(../images/img05.png);
+	background-repeat: no-repeat;
+	margin: 0px;
+	padding: 15px;
+	background-position: right top;
+}
+#page #login #form1 #content ul {
+	margin: 0px;
+	list-style-type: none;
+}
+#page #login #form1 #content li {
+	height: 30px;
+}
+
+#page #login #btm #l {
+	background-image: url(../images/img07.gif);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	height: 10px;
+}
+#page #login #btm #l #r {
+	background-image: url(../images/img08.gif);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	height: 10px;
+}

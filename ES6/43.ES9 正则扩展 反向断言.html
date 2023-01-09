@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则扩展 反向断言</title>
+</head>
+<body>
+    <script>
+        // 断言：可以根据目标的内容前边和后边对它进行唯一性的识别
+        let str="ikun666鸡你实在是太美";
+        // 正向断言
+        const reg=/\d+(?=鸡)/;//判断数字的后面是不是鸡
+        const result=reg.exec(str);
+        console.log(result);
+
+        // 反向断言
+        const reg2=/(?<=n)\d+/;//判断数字的前面是不是n
+        const result2=reg2.exec(str);
+        console.log(result2);
+    </script>
+</body>
+</html>

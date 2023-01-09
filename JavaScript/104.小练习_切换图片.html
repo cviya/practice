@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            /*
+                使图片可以自动切换
+            */ 
+           var img1=document.getElementById("img1");
+           var imgArr=["img/u=467801360,4187056514&fm=193&f=GIF.jpg","img/u=3157130627,2942506140&fm=193&f=GIF.jpg","img/u=3587945189,2578428673&fm=193&f=GIF.jpg"];
+           var index=0;
+           var timer;
+           /*
+                开启一个定时器，来自动切换图片
+           */ 
+          var btn01=document.getElementById("btn01");
+          btn01.onclick=function(){
+            // 在开启一个定时器之前，需要将当前元素上的其他定时器关闭
+            clearInterval(timer);
+            timer=setInterval(function(){
+            index++;
+            if(index>=imgArr.length){
+                index=0;
+            }
+            img1.src=imgArr[index];
+          },1000);
+          };
+          
+          var btn02=document.getElementById("btn02");
+          btn02.onclick=function(){
+            /*
+                点击按钮以后，停止图片的自动切换，关闭定时器
+
+                clearInterval()可以接收任意参数，
+                如果参数是一个有效的定时器的标识，则停止对应的定时器
+                如果参数不是一个有效的标识，则什么也不做
+            */ 
+            clearInterval(timer);
+          };
+        };
+    </script>
+</head>
+<body>
+    <img id="img1" src="./img/u=3157130627,2942506140&fm=193&f=GIF.jpg">
+    <button id="btn01">开始</button>
+    <button id="btn02">暂停</button>
+</body>
+</html>

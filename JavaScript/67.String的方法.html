@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str="Hello World";
+        /*
+            charAt()
+                返回指定位置的字符
+        */
+        var result=str.charAt(1);
+        console.log(result);
+
+        /*
+            charCodeAt()
+                获取指定位置字符的Unicode编码
+        */
+       result=str.charCodeAt(1);
+       console.log(result);
+
+       /*
+            concat()
+                可以用来链接两个或多个字符串
+       */ 
+      var str2="  how are you";
+      result=str.concat(str2);
+      console.log(result)
+
+      /*
+            indexOf()
+                检索一个字符串是否有指定内容
+                如果字符串中含有改内容，则会返回其第一次出现的索引
+                    如果没有找到指定的内容，则返回-1
+            lastIndexOf()
+                用法和indexOf()一样，不同的是lastIndexOf()是从后往前找
+      */ 
+     result=str.indexOf("d");
+     console.log(result);
+
+     /*
+            slice()
+                可以从字符串中截取指定的内容
+     */ 
+    result=str.slice(0,2);
+    console.log(result);
+
+    /*
+            substring()
+                可以截取一个字符串，和slice()类似
+                不同的是这个方法不能接受负值作为参数，如果传递了负值，默认使用0
+    */
+   result=str.substring(0,2);
+   console.log(result);
+
+   /*
+            split()
+                可以将一个字符串拆分为一个数组
+                参数
+                    需要一个字符串作为参数，将会根据该字符串去拆分数组
+                    如果传递一个空串，则一个一个拆分
+   */ 
+        str3="abc,bcd,efg,hij";
+        result=str3.split(",");
+        console.log(result)
+
+    /*
+        toUpperCase()
+            将一个字符串转换为大写并返回
+        toLowerCase();
+            将一个字符串转换为小写并返回
+    */ 
+        result=str.toUpperCase();
+        console.log(result);
+        result=str.toLowerCase();
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

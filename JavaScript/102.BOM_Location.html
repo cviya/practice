@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            Location
+                该对象中封装了浏览器的地址栏的信息
+        */ 
+        window.onload=function(){
+            var btn01=document.getElementById("btn01");
+            btn01.onclick=function(){
+                // 可以获取地址栏的信息(当前页面的完整路径)
+                // alert(location);
+
+                // 如果直接将location属性修改为一个完整的路径，或相对路径，则我们页面会自动跳转到该路径，且生成历史记录
+                // location="99.小练习4.html";
+
+                // 跟location跳转路径一样
+                // location.assign("http://www.baidu.com");
+
+                // reload()和浏览器的刷新一样，如果在方法中传递一个true作为参数，则会强制清空缓存刷新页面
+                // location.reload(true);
+
+                // replace()和跳转页面一样，但不会生成历史记录
+                // location.replace("http://www.baidu.com");
+            };
+        };
+    </script>
+</head>
+<body>
+    <button id="btn01">点击一下</button>
+    <!-- <button id="btn02">点击一下跳转下一个页面</button> -->
+</body>
+</html>

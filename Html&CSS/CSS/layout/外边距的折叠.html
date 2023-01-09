@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1,.box2{
+            width: 200px;
+            height: 200px;
+        }
+        /*
+         外边距的折叠
+            -相邻的垂直方向外边距会发生折叠现象
+            -兄弟元素间的相邻垂直外边距会取两者之间的较大值
+
+            -父子元素
+                -父子元素间相邻外边距，子元素会传递给父元素（上下外边距），左右不会传递
+        */
+        .box1{
+            background-color: aqua;
+            /* 设置一个下外边距 */
+            margin-bottom: 100px;
+        }
+        .box2{
+            background-color: orange;
+            /* 设置一个上边距 */
+            margin-top: 100px;
+            margin-left: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"> <div class="box2"></div></div>
+   
+</body>
+</html>

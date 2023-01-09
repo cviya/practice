@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str="1a2b3c4d5e6f7";
+        /*
+            split()
+                可以将一个字符串拆分为一个数组
+                方法中可以传递一个正则表达式作为参数,这样方法将根据正则表达式去拆分字符串
+        */
+       var result=str.split(/[0-9]/);
+       console.log(result);
+
+       /*
+            search()
+                可以搜索字符串中是否有指定内容，和indexOf()类似
+                但是它可以接收一个正则表达式作为参数
+       */
+      str="hello abc hello aec afe";
+    //   搜索字符串中是否含有abc或aec或afc
+      console.log(str.search(/a[bef]c/));
+
+      /*
+        match()
+            可以根据正则表达式，从一个字符串中将符合条件的欸容提取出来
+            会将匹配到内容封装到数组中返回
+      */
+      str="1a2a3c4d5e6f7";
+    //   默认情况下match只会找到一第一个符合要求的内容，找到后就停止检索，我们可以将匹配模式改为全局匹配模式
+      result=str.match(/[0-9]/g);
+      console.log(result);
+
+      /*
+        replace()
+            可以将字符串中指定内容替换为新内容
+            参数：
+                1.被替换的内容，可以接收一个正则表达式作为参数
+                2.新的内容
+            默认只会替换第一个
+      */
+     result=str.replace(/a/g,"@_@")
+     console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

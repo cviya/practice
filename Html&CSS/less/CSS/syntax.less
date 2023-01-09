@@ -1,0 +1,99 @@
+// 注释
+/* css注释，内容会被解析到css文件中 */
+.box1{
+    background-color: #bfa;
+    .box2{
+        background-color: antiquewhite;
+    }
+    .box3{
+        background-color: black;
+    }
+}
+
+//变量，在变量中可以存储一个任意的值
+//并且可以在需要时，任意修改变量中的值
+//变量的语法，@变量名
+@a:100px;
+@b:#bfa;
+@c:box4;
+.box1{
+    width: @a;
+    color: @b;
+}
+//作为类名，或者一部分值使用时必须以@{变量名}的形式使用
+.@{c}{
+    width: @a;
+}
+
+@d:100px; 
+@d:200px;
+.box5{
+    //变量发生重名时，会优先使用比较近的变量
+    width: @d; 
+    //可以在变量声明前就使用变量
+    height: @e;
+}
+@e:100px;
+
+.box6{
+    width: 200px;
+    height: $width;
+}
+
+.box7{
+    .box8{
+        color: #bfa;
+    }
+    >.box9{
+        color: rebeccapurple;
+        &:hover{
+            background-color: bisque;
+        }
+    }
+
+    // 为box1设置一个hover,&就表示外层的父元素
+    &:hover{
+        color: beige;
+    }
+}
+
+
+.p1{
+    width: 100px;
+    height: 100px;
+}
+// :extend()对当前选择器扩展指定选择器的样式（选择器分组）
+.p2:extend(.p1){
+    color: red;
+}
+
+// 使用类选择器时可以在选择器后边添加一个括号，这时我们实际上就创建了一个mixins混合函数
+.p3(){
+    width: 100px;
+    height: 100px;
+}
+.p4{
+    .p3();
+}
+
+// 混合函数
+.test(@w,@h,@color){
+    width: @w;
+    height: @h;
+    border: 1px solid @color;
+}
+div{
+    // .test(100px,100px,red);
+    .test(@w:100px,@color:red,@h:100px);
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+body:extend(html){
+    background-color: #bfa;
+    &:hover{
+        background-color: darken(#bfa,10%);
+    }
+}

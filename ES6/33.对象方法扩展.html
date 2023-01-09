@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象方法扩展</title>
+</head>
+<body>
+    <script>
+        //Object.is()
+        console.log(Object.is(NaN===NaN));
+
+        //Object.assign
+        const config1={
+            name:"cwy",
+            age:24,
+            school:"gzst"
+        }
+        // 会替换掉config1
+        const config2={
+            name:"cwy2",
+            age:25,
+            favourite:"sex"
+        }
+        console.log(Object.assign(config1,config2));
+
+        //Object.setPrototypeOf
+        const school={
+            school:"gzst"
+        }
+        const city={
+            has:["gz","sh","sz"]
+        }
+        console.log(school);
+        Object.setPrototypeOf(school,city)
+    </script>
+</body>
+</html>

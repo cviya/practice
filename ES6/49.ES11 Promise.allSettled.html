@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise.allSettled</title>
+</head>
+<body>
+    <script>
+        const p1=new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                resolve("商品数据-1")
+            }, 1000);
+        });
+        const p2=new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                resolve("商品数据-2")
+            }, 1000);
+        });
+        const p3=new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                reject("失败了")
+            }, 1000);
+        });
+        const p4=new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                reject("失败了")
+            }, 1000);
+        });
+        // Promise.allSettled 不论结果如何都会返回结果，然后显示相应结果的状态和值
+        const result=Promise.allSettled([p1,p4])
+        console.log(result);
+        // Promise.all 有一个结果是失败的就会返回失败，状态为rejected
+        const result2=Promise.all([p1,p2])
+        console.log(result2);
+    </script>
+</body>
+</html>

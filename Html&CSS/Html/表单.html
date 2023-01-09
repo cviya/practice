@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        表单用于提交数据，将本地数据上传的服务器
+     -->
+     <!-- 
+        form的属性
+            action 表单要提交的服务器地址
+      -->
+     <form action="./表单服务器test.html">
+         <!-- 
+               文本框
+               注意：数据要提交到服务器中，必须要为元素指定一个name属性
+          -->
+          手机号<input type="text" name="usernametest">
+          <br>
+          密码框<input type="password" name="password">
+          <br>
+          <!-- 
+                单选按钮
+                name属性必须一样才可以选其中一个
+                像这种选择框，必须要指定一个value属性，value属性最终会作为用户的填写的值
+                checked 可以将单选按钮设置为默认选中
+           -->
+          单选按钮<input type="radio" name="1" value="on"><input type="radio" name="1" value="off" checked>
+          <br>
+          <!-- 
+                多选框
+           -->
+          多选框<input type="checkbox" name="test" value="1">
+          <input type="checkbox" name="test" value="2" checked>
+          <input type="checkbox" name="test" value="3">
+          <br>
+          <!-- 
+                下拉列表
+                option中添加一个selected默认选中
+           -->
+          下拉列表<select name="ha" id="">
+            <option value="i">选项一</option>
+            <option value="ii">选项二</option>
+            <option selected value="iii">选项三</option>
+          </select>
+          <br>
+          <!-- 
+            提交按钮 value可以指定按钮的文字
+         -->
+          <input type="submit" value="注册">
+     </form>
+
+</body>
+</html>

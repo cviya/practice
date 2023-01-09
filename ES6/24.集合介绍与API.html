@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>集合</title>
+</head>
+<body>
+    <script>
+        // 声明一个set
+        let set=new Set();
+        console.log(set,typeof set);
+        let set2=new Set(["大事儿","小事儿","好事儿","坏事儿"]);
+        console.log(set2.size)
+        for(let v of set2){
+            console.log(v);
+        }
+        // 删除
+        set2.delete("坏事儿");
+        console.log(set2);
+        // 检测
+        console.log(set2.has("好事儿"));
+        // 清空
+        set2.clear();
+        console.log(set2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            parentNode 表示当前节点的父节点
+            
+            previousSibling 表示当前节点的前一个兄弟节点
+            previousElementSibling 表示当前节点的前一个兄弟元素
+
+            nextSibling 表示当前节点的后一个兄弟节点
+        */ 
+        
+       window.onload=function(){
+        function btnOnClick(idString,fun){
+        var btn=document.getElementById(idString);
+        btn.onclick=fun;
+       };
+       btnOnClick("btn1",function(){
+        var bj=document.getElementById("bj");
+        // 找到id为bj的父节点返回给pn
+        var pn=bj.parentNode;
+        // innerHTML打印pn标签下的所有内容
+        alert(pn.innerHTML);
+        // innerText打印pn标签下的所有文本内容
+        alert(pn.innerText);
+       });
+
+        
+       btnOnClick("btn2",function(){
+        var sh=document.getElementById("sh");
+        // 找到id为sh的兄弟元素返回给pn
+        var pn=sh.previousElementSibling;
+        // innerHTML打印pn标签下的所有内容
+        alert(pn.innerHTML);
+        // innerText打印pn标签下的所有文本内容
+        alert(pn.innerText);
+       });
+       };
+      
+    </script>
+</head>
+<body>
+    <div class="outer">
+        <ul id="city">
+            <li id="bj">北京</li>
+            <li id="sh">上海</li>
+            <li>广州</li>
+            <li>深圳</li>
+        </ul>
+        <ul id="phone">
+            <li id="xm">小米</li>
+            <li id="ip">苹果</li>
+            <li>华为</li>
+            <li>三星</li>
+        </ul>
+        <button id="btn1">按钮1</button>
+        <button id="btn2">按钮2</button>
+        <button id="btn3">按钮3</button>
+        <button id="btn4">按钮4</button>
+    </div>
+</body>
+</html>

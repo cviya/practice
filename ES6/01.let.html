@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let</title>
+</head>
+<body>
+    <script>
+        // 1.let与var的区别就是let不能重复声明，而var可以
+        /*
+        let a=11;
+        let a=13;
+        var b=jj;
+        var b=j11;
+        */
+
+        // 2.块级作用域 全局，函数，eval  let只作用于代码块里边
+        /*
+        {
+            var girl="lucy";
+            let boy="tom";
+        }
+        console.log(girl);
+        // boy会报错未定义
+        console.log(boy);
+        */
+
+        // 3.不存在变量提升 let声明不会提前会报错，var声明可以提前，但不会赋值
+        /*
+        console.log(d);
+        var d="no";
+        console.log(e);
+        let e="no";
+        */
+
+        // 4.不影响作用域链
+        {
+            let school="gzsu";
+            function fun(){
+                // 会向上找school变量
+                console.log(school);
+            }
+            fun();
+        }
+    </script>
+</body>
+</html>
