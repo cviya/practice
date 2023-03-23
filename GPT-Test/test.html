@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>任务列表</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		header {
+			background-color: #333;
+			color: #fff;
+			padding: 10px;
+		}
+		form {
+			margin: 10px;
+		}
+		input[type="text"] {
+			padding: 5px;
+			width: 200px;
+			font-size: 16px;
+		}
+		input[type="submit"] {
+			padding: 5px;
+			font-size: 16px;
+			background-color: #333;
+			color: #fff;
+			border: none;
+			cursor: pointer;
+		}
+		label {
+			display: block;
+			margin: 5px 0;
+			font-size: 16px;
+			cursor: pointer;
+		}
+		input[type="checkbox"] {
+			margin-right: 10px;
+			cursor: pointer;
+		}
+		footer {
+			background-color: #eee;
+			padding: 10px;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			text-align: center;
+			font-size: 14px;
+			color: #999;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>任务列表</h1>
+		<form id="task-form">
+			<label>
+				添加任务：
+				<input type="text" id="new-task" />
+			</label>
+			<input type="submit" value="添加" />
+		</form>
+	</header>
+	<main>
+		<form id="task-list">
+			<label>
+				<input type="checkbox" name="task" value="eat" />
+				吃饭
+			</label>
+			<label>
+				<input type="checkbox" name="task" value="sleep" />
+				睡觉
+			</label>
+			<label>
+				<input type="checkbox" name="task" value="play"/>
+				打豆豆
+			</label>
+		</form>
+	</main>
+	<footer>
+		已完成任务：
+		<span id="completed-tasks"></span>
+	</footer>
+	<script>
+		// 获取DOM元素
+		let taskForm = document.getElementById('task-form');
+		let newTaskInput = document.getElementById('new-task');
+		let taskList = document.getElementById('task-list');
+		let completedTasks = document.getElementById('completed-tasks');
+
+		// 初始化已完成任务数量
+		let completedCount = 0;
+		completedTasks.innerHTML = completedCount;
+
+		// 添加任务
+		taskForm.addEventListener('submit', function(event) {
+			event.preventDefault(); // 阻止表单提交
+			let taskName = newTaskInput.value.trim();
+			if (taskName) {
+				let taskLabel = document.createElement('label');
+				let taskCheckbox = document.createElement('input');
+				taskCheckbox.type = 'checkbox';
+				taskCheckbox.name = 'task';
+				taskCheckbox.value = taskName;
+				taskLabel.appendChild(taskCheckbox);
+				taskLabel.appendChild(document.createTextNode(taskName));
+				taskList.appendChild(taskLabel);
+				newTaskInput.value = '';
+			}
+		});
+
+		// 监听勾选状态改变
+		taskList.addEventListener('change', function(event) {
+			let target = event.target;
+			if (target.type === 'checkbox') {
+				if (target.checked) {
+					completedCount++;
+				} else {
+					completedCount--;
+				}
+				completedTasks.innerHTML = completedCount;
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h2>当前的n值是:{{n}}</h2>
+        <button @click="add">点我n+1</button>
+        <button @click="bye">点我销毁vm</button>
+    </div>
+</body>
+    <script>
+        const vm=new Vue({
+            el:'#root',
+            data:{
+                n:1
+            },
+            methods: {
+                add(){
+                    this.n++
+                },
+                bye(){
+                    console.log(this.bye)
+                    this.$destroy()
+                }
+            },
+            beforeCreate() {
+                console.log('beforeCreate的',this);
+            },
+            created(){
+                console.log('created的',this)
+            },
+            beforeMount() {
+                console.log('beforeMount',this)
+            },
+            mounted() {
+                console.log('mounted',this)
+            },
+            beforeUpdate() {
+                console.log('beforeUpdate',this)
+                console.log(this.n)
+                // debugger
+            },
+            updated() {
+                console.log('updated',this)
+                console.log(this.n)
+            },
+            beforeDestroy() {
+                console.log('beforeDestory',this)
+                debugger
+            },
+            destroyed() {
+                console.log('destoryed',this)
+            },
+        })
+    </script>
+</html>
