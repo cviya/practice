@@ -54,8 +54,8 @@
               >
                 <div class="list-wrap">
                   <div class="p-img">
-                    <a href="item.html" target="_blank"
-                      ><img :src="good.defaultImg"
+                    <a @click="goDetail(good.id)"
+                      ><img v-lazy="good.defaultImg"
                     /></a>
                   </div>
                   <div class="price">
@@ -90,7 +90,8 @@
               </li>
             </ul>
           </div>
-      <Pagination/>
+          <!-- 分页器 -->
+      <Pagination :pageNo='searchParams.pageNo' :pageSize='searchParams.pageSize' :total='total' :continues='5' @getPageNo='getPageNo'/>
         </div>
       </div>
     </div>
@@ -98,7 +99,7 @@
 </template>
 
 <script>
-// import { mapState } from "vuex";
+import { mapState } from "vuex";
 import { mapGetters } from "vuex";
 import SearchSelector from "./SearchSelector/SearchSelector";
 export default {
@@ -140,7 +141,12 @@ export default {
     },
     isDesc(){
       return this.searchParams.order.indexOf('desc')!=-1
-    }
+    },
+    ...mapState({
+      total:(state)=>{
+        return state.search.searchList.total
+      }
+    }),
   },
   methods: {
     // 向服务器发请求获取search模块数据
@@ -201,6 +207,16 @@ export default {
       }
       this.searchParams.order=newOrder
       this.getData()
+    },
+    getPageNo(pageNo){
+      this.searchParams.pageNo=pageNo
+      this.getData()
+    },
+    goDetail(skuid){
+      this.$router.push({
+        name:'detail',
+        params:{skuId:skuid}
+      })
     }
   },
   watch: {

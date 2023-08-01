@@ -5,15 +5,19 @@
       <div class="container">
         <div class="loginList">
           <p>尚品汇欢迎您！</p>
-          <p>
+          <p v-if="!userName">
             <span>请</span>
             <router-link to="/login">登录</router-link>
             <router-link to="/register" class="register">免费注册</router-link>
           </p>
+          <p v-else="userName">
+            <a>{{ userName }}</a>
+            <a class="register" @click="logOut">退出登录</a>
+          </p>
         </div>
         <div class="typeList">
-          <a href="###">我的订单</a>
-          <a href="###">我的购物车</a>
+          <router-link to="/center/myorder">我的订单</router-link>
+          <router-link to="/shopcart">我的购物车</router-link>
           <a href="###">我的尚品汇</a>
           <a href="###">尚品汇会员</a>
           <a href="###">企业采购</a>
@@ -38,7 +42,11 @@
             class="input-error input-xxlarge"
             v-model="keyword"
           />
-          <button class="sui-btn btn-xlarge btn-danger" type="button" @click='goSearch'>
+          <button
+            class="sui-btn btn-xlarge btn-danger"
+            type="button"
+            @click="goSearch"
+          >
             搜索
           </button>
         </form>
@@ -49,32 +57,43 @@
 
 <script>
 export default {
-    name:'Header',
-    data() {
-      return {
-        keyword:''
+  name: "Header",
+  data() {
+    return {
+      keyword: "",
+    };
+  },
+  computed: {
+    userName() {
+      return this.$store.state.user.userInfo.name;
+    },
+  },
+  methods: {
+    goSearch() {
+      // 模板字符串写法
+      // this.$router.push(`/search/${this.keyword}?k=${this.keyword.toUpperCase()}`)
+      // 对象写法
+      let location = {
+        name: "search",
+        params: { keyword: this.keyword },
+      };
+      if (this.$route.query) {
+        location.query = this.$route.query;
       }
+      this.$router.push(location);
     },
-    methods: {
-      goSearch(){
-        // 模板字符串写法
-        // this.$router.push(`/search/${this.keyword}?k=${this.keyword.toUpperCase()}`)
-        // 对象写法
-        let location={
-          name:'search',
-          params:{keyword:this.keyword}
-        }
-        if(this.$route.query){
-        location.query=this.$route.query
-        }
-        this.$router.push(location)
-      }
+    async logOut() {
+      try {
+        await this.$store.dispatch("userLogOut");
+        this.$router.push("/login");
+      } catch (error) {}
     },
-    mounted() {
-      this.$bus.$on('clear',()=>{
-        this.keyword=''
-      })
-    },
+  },
+  mounted() {
+    this.$bus.$on("clear", () => {
+      this.keyword = "";
+    });
+  },
 };
 </script>
 

@@ -21,13 +21,13 @@ const actions={
 // 可以把我们将来在组件当中需要用的数据简化一下
 const getters={
     goodsList(state){
-        return state.searchList.goodsList||[]
+        return state.searchList.goodsList||{}
     },
     trademarkList(state){
-        return state.searchList.trademarkList||[]
+        return state.searchList.trademarkList||{}
     },
     attrsList(state){
-        return state.searchList.attrsList||[]
+        return state.searchList.attrsList||{}
     }
 }
 export default {
